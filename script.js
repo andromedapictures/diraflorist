@@ -94,3 +94,8 @@ checkoutButton.addEventListener('click', () => {
 updateTotal();
 
 });
+
+document.getElementById('contact-button').addEventListener('click', function() {
+    const options = document.getElementById('contact-options');
+    options.classList.toggle('hidden');
+});
