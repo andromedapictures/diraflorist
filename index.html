@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>DIRA FLORIST</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="beranda.css">
   <link href="https://fonts.googleapis.com/css2?family=Parisienne&family=Segoe+UI&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -25,17 +26,21 @@
 
 <!-- Sidebar Keranjang -->
 <div id="cart-sidebar" class="cart-sidebar">
-  <div class="cart-header">
-    <h3>Keranjang Belanja</h3>
-    <button id="close-cart" aria-label="Tutup Keranjang">✕</button>
+      <div class="cart-header">
+        <h3>Keranjang Belanja</h3>
+        <button id="close-cart" aria-label="Tutup Keranjang">✕</button>
+      </div>
+      <div class="cart-content">
+        <p>Keranjang Anda masih kosong.</p>
+      </div>
+      <div class="cart-footer">
+  <div class="cart-form" style="padding: 10px; display: flex; flex-direction: column; gap: 8px;">
+    <input type="text" id="nama-pemesan" placeholder="Nama Pemesan/Dari" style="padding: 8px; border-radius: 6px; border: 1px solid #ccc; font-size: 14px;">
+    <input type="text" id="kepada-penerima" placeholder="Kepada" style="padding: 8px; border-radius: 6px; border: 1px solid #ccc; font-size: 14px;">
+    <input type="text" id="Pesan" placeholder="Pesan Yang Ingin disampaikan" style="padding: 8px; border-radius: 6px; border: 1px solid #ccc; font-size: 14px;">
   </div>
-  <div class="cart-content">
-    <p>Keranjang Anda masih kosong.</p>
-    <!-- Nanti akan diisi item -->
-  </div>
-  <div class="cart-footer">
-    <button class="checkout-button">Checkout</button>
-  </div>
+    <a href="" id="checkout-link" class="checkout-button">Checkout</a>
+  <div id="cart-total-display" style="font-weight: bold; margin-bottom: 8px; margin-top: 10px;">Total: Rp0</div>
 </div>
 
   </header>

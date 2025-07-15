@@ -35,8 +35,8 @@
     <input type="text" id="kepada-penerima" placeholder="Kepada" style="padding: 8px; border-radius: 6px; border: 1px solid #ccc; font-size: 14px;">
     <input type="text" id="Pesan" placeholder="Pesan Yang Ingin disampaikan" style="padding: 8px; border-radius: 6px; border: 1px solid #ccc; font-size: 14px;">
   </div>
-  <a href="formpesanan.html" id="checkout-link" class="checkout-button">Checkout</a>
-  <div id="cart-total-display" style="font-weight: bold; margin-bottom: 8px;">Total: Rp0</div>
+    <a href="" id="checkout-link" class="checkout-button">Checkout</a>
+  <div id="cart-total-display" style="font-weight: bold; margin-bottom: 8px; margin-top: 10px;">Total: Rp0</div>
 </div>
 
       
@@ -88,11 +88,21 @@ document.getElementById('checkout-link').addEventListener('click', function(even
 
     const total = document.getElementById('cart-total-display').innerText.trim();
 
-    const teksPesan = `PESANAN DIRA FLORIST%0A` +
-                      `NAMA PEMESAN/DARI: ${nama}%0A` +
-                      `KEPADA: ${kepada}%0A` +
-                      `ISI PESAN: ${pesanTambahan}%0A` +
-                      `%0A*Daftar Pesanan:*%0A${pesananList}%0A${total}`;
+const teksPesan = 
+`🪻 *PESANAN DIRA FLORIST* 🪻
+
+Nama Pemesan/Dari: ${nama}/+\n
+Kepada:* ${kepada}\n
+
+────────────────────
+Isi Pesan:
+${pesanTambahan}\n
+────────────────────
+Daftar Pesanan:\n
+${pesananList}
+
+${total}
+`;
 
     const nomorWA = "6285279105496"; // GANTI dengan nomor WA toko Anda
     const url = `https://wa.me/${nomorWA}?text=${encodeURIComponent(teksPesan)}`;
