@@ -1,18 +1,71 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Halaman Dalam Pengembangan - DIRA FLORIST</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DIRA FLORIST</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="beranda.css">
   <link href="https://fonts.googleapis.com/css2?family=Parisienne&family=Segoe+UI&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="galeri.css" />
 </head>
 <body>
-  <div class="container">
-    <img src="images/logo.png" alt="Dira Florist Logo" class="logo">
-    <h1>Halaman Dalam Pengembangan</h1>
-    <p>Mohon maaf, halaman ini sedang dalam tahap pengembangan.<br>Silakan kembali lagi nanti.</p>
-    <a href="index.html" class="back-button">Kembali ke Beranda</a>
+  <header>
+    <nav>
+      <div class="logo-container">
+        <img src="images/logo.png" alt="DIRA FLORIST Logo" class="logo">
+        <span class="brand-name">Dira Florist</span>
+      </div>
+      <div class="nav-links">
+        <a href="beranda.html">BERANDA</a>
+        <a href="galeri.html">GALERI</a>
+      </div>
+      <button id="cart-button" aria-label="Keranjang" class="cart-button">
+        🛒
+      </button>
+    </nav>
+
+<!-- Sidebar Keranjang -->
+<div id="cart-sidebar" class="cart-sidebar">
+      <div class="cart-header">
+        <h3>Keranjang Belanja</h3>
+        <button id="close-cart" aria-label="Tutup Keranjang">✕</button>
+      </div>
+      <div class="cart-content">
+        <p>Keranjang Anda masih kosong.</p>
+      </div>
+      <div class="cart-footer">
+  <div class="cart-form" style="padding: 10px; display: flex; flex-direction: column; gap: 8px;">
+    <input type="text" id="nama-pemesan" placeholder="Nama Pemesan/Dari" style="padding: 8px; border-radius: 6px; border: 1px solid #ccc; font-size: 14px;">
+    <input type="text" id="kepada-penerima" placeholder="Kepada" style="padding: 8px; border-radius: 6px; border: 1px solid #ccc; font-size: 14px;">
+    <input type="text" id="Pesan" placeholder="Pesan Yang Ingin disampaikan" style="padding: 8px; border-radius: 6px; border: 1px solid #ccc; font-size: 14px;">
   </div>
+    <a href="" id="checkout-link" class="checkout-button">Checkout</a>
+  <div id="cart-total-display" style="font-weight: bold; margin-bottom: 8px; margin-top: 10px;">Total: Rp0</div>
+</div>
+
+  </header>
+
+  <!-- ========== GALERI ========== -->
+  <main>
+    <section class="titlegaleri">
+      <div class="galericard">
+        <span class="galeriname">Galeri Dira Florist</span>
+      </div>
+    </section>
+
+    <section class="product-grid">
+      <div class="product-card">
+        <img src="images/flowerbox1.jpeg" alt="Papan Bunga A">
+      </div>
+      <div class="product-card">
+        <img src="images/flowerbox2.jpeg" alt="Flower Box B">
+      </div>
+      <div class="product-card">
+        <img src="images/flowerbox3.jpeg" alt="Papan Bunga C">
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
 </body>
 </html>
