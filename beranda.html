@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Beranda - DIRA FLORIST</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="beranda.css">
+  <link href="https://fonts.googleapis.com/css2?family=Parisienne&family=Segoe+UI&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo-container">
+        <img src="images/logo.png" alt="DIRA FLORIST Logo" class="logo">
+        <span class="brand-name">Dira Florist</span>
+      </div>
+      <div class="nav-links">
+        <a href="beranda.html">BERANDA</a>
+        <a href="galeri.html">GALERI</a>
+      </div>
+      <button id="cart-button" aria-label="Keranjang" class="cart-button">🛒<span id="cart-count" class="cart-count">0</span></button>
+    </nav>
+    <div id="cart-sidebar" class="cart-sidebar">
+      <div class="cart-header">
+        <h3>Keranjang Belanja</h3>
+        <button id="close-cart" aria-label="Tutup Keranjang">✕</button>
+      </div>
+      <div class="cart-content">
+        <p>Keranjang Anda masih kosong.</p>
+      </div>
+      <div class="cart-footer">
+  <div class="cart-form" style="padding: 10px; display: flex; flex-direction: column; gap: 8px;">
+    <input type="text" id="nama-pemesan" placeholder="Nama Pemesan/Dari" style="padding: 8px; border-radius: 6px; border: 1px solid #ccc; font-size: 14px;">
+    <input type="text" id="kepada-penerima" placeholder="Kepada" style="padding: 8px; border-radius: 6px; border: 1px solid #ccc; font-size: 14px;">
+    <input type="text" id="Pesan" placeholder="Pesan Yang Ingin disampaikan" style="padding: 8px; border-radius: 6px; border: 1px solid #ccc; font-size: 14px;">
+  </div>
+  <a href="formpesanan.html" id="checkout-link" class="checkout-button">Checkout</a>
+  <div id="cart-total-display" style="font-weight: bold; margin-bottom: 8px;">Total: Rp0</div>
+</div>
+
+      
+    </div>
+  </header>
+
+  <main>
+    <section class="product-grid">
+      <div class="product-card">
+        <img src="images/produk1.jpg" alt="Papan Bunga A">
+        <h3>Papan Bunga Ucapan</h3>
+        <p>Rp 350.000</p>
+        <button class="add-to-cart">Beli</button>
+      </div>
+      <div class="product-card">
+        <img src="images/produk2.jpg" alt="Flower Box B">
+        <h3>Flower Box Premium</h3>
+        <p>Rp 250.000</p>
+        <button class="add-to-cart">Beli</button>
+      </div>
+      <div class="product-card">
+        <img src="images/produk3.jpg" alt="Papan Bunga C">
+        <h3>Papan Bunga Duka</h3>
+        <p>Rp 400.000</p>
+        <button class="add-to-cart">Beli</button>
+      </div>
+      <div class="product-card">
+        <img src="images/produk4.jpg" alt="Flower Box D">
+        <h3>Flower Box Spesial</h3>
+        <p>Rp 275.000</p>
+        <button class="add-to-cart">Beli</button>
+      </div>
+    </section>
+  </main>
+
+  <script>
+document.getElementById('checkout-link').addEventListener('click', function(event) {
+    event.preventDefault();
+
+    const nama = document.getElementById('nama-pemesan').value.trim();
+    const kepada = document.getElementById('kepada-penerima').value.trim();
+    const pesanTambahan = document.getElementById('Pesan').value.trim();
+
+    const cartItems = document.querySelectorAll('.cart-item span');
+    let pesananList = "";
+    cartItems.forEach((item, index) => {
+        pesananList += `${index + 1}. ${item.textContent}\n`;
+    });
+
+    const total = document.getElementById('cart-total-display').innerText.trim();
+
+    const teksPesan = `PESANAN DIRA FLORIST%0A` +
+                      `NAMA PEMESAN/DARI: ${nama}%0A` +
+                      `KEPADA: ${kepada}%0A` +
+                      `ISI PESAN: ${pesanTambahan}%0A` +
+                      `%0A*Daftar Pesanan:*%0A${pesananList}%0A${total}`;
+
+    const nomorWA = "6285279105496"; // GANTI dengan nomor WA toko Anda
+    const url = `https://wa.me/${nomorWA}?text=${encodeURIComponent(teksPesan)}`;
+
+    window.open(url, '_blank');
+});
+</script>
+
+
+  <script src="script.js"></script>
+
+<script>
+  const nomorToko = "6285279105496"; // ganti dengan nomor WA toko tanpa + (pakai kode negara)
+</script>
+
+</body>
+
+
